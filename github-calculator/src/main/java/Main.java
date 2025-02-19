@@ -1,8 +1,19 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args){
-        System.out.println("entered main.java");
+        Scanner scanner = new Scanner(System.in);
         Calculator test = new Calculator();
-        while (!args[1].equals("quit")) {
+
+        while (true) {
+            System.out.print("Enter command: ");
+            String input = scanner.nextLine();
+            String[] tokens = input.split(" ");
+
+            if (tokens[0].equalsIgnoreCase("quit")) {
+                System.out.println("Exiting...");
+                break;
+            }
             switch (args[1]) {
                 case "add":
                     test.add(Integer.parseInt(args[2]), Integer.parseInt(args[3]));
@@ -26,5 +37,6 @@ public class Main {
                     System.out.println("Wrong command: Please type either 'add' 'subtract' 'multiply' 'divide' fibonacci' or 'binary'");
             }
         }
+        scanner.close();
     }
 }
