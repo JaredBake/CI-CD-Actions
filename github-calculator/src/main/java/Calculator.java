@@ -1,5 +1,4 @@
-import static com.sun.tools.classfile.Module_attribute.RequiresEntry.length;
-import static java.util.UUID.randomUUID;
+import java.util.Random;
 
 class Calculator {
 //    Attempt Six
@@ -86,7 +85,15 @@ class Calculator {
      */
     String createUniqueID(String n){
         if (n != null){
-            return (n + randomUUID().toString().replace("-", "").substring(0, length));
+            String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            StringBuilder salt = new StringBuilder();
+            Random rnd = new Random();
+            while (salt.length() < 18) { // length of the random string.
+                int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+                salt.append(SALTCHARS.charAt(index));
+            }
+            String saltStr = salt.toString();
+            return n.concat(saltStr);
         }
         return null;
     }
