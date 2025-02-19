@@ -15,13 +15,13 @@ jobs:
         uses: actions/checkout@v2
       - name: Clean
         run: mvn -ntp clean
-        working-directory: C:/Users/18jab/CS204/GitActions/CI-CD-Actions/github-calculator/pom.xml
+        working-directory: ./github-calculator/pom.xml
       - name: Build
         run: mvn -ntp compile
-        working-directory: C:/Users/18jab/CS204/GitActions/CI-CD-Actions/github-calculator/pom.xml
+        working-directory: ./github-calculator/pom.xml
       - name: Short tests
         run: mvn -ntp test -Dtest='CalculatorTest'
-        working-directory: C:/Users/18jab/CS204/GitActions/CI-CD-Actions/github-calculator/pom.xml
+        working-directory: ./github-calculator/pom.xml
       - name: Long tests
         run: mvn -ntp test -Dtest='CalculatorTestThorough'
-        working-directory: C:/Users/18jab/CS204/GitActions/CI-CD-Actions/github-calculator/pom.xml
+        working-directory: ./github-calculator/pom.xml
