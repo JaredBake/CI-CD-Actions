@@ -6,8 +6,11 @@ public class Main {
         Calculator test = new Calculator();
 
         while (true) {
+            String input = null;
             System.out.print("Enter command: ");
-            String input = scanner.nextLine();
+            if (scanner.hasNext()) {
+                input = scanner.nextLine();
+            }
             String[] tokens = input.split(" ");
 
             if (tokens[0].equalsIgnoreCase("quit")) {
