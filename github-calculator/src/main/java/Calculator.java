@@ -65,14 +65,16 @@ class Calculator {
             return "1010";
         }else if (number == 16){
             return "10000";
-        }else if (number == 20){
-            return "10100";
-        }else if (number == 999){
-            return "1111100111";
-        }else if (number == 1023){
-            return "1111111111";
+        }else {
+//        else if (number == 20){
+//            return "10100";
+//        }else if (number == 999){
+//            return "1111100111";
+//        }else if (number == 1023){
+//            return "1111111111";
+//        }
+            return Integer.toBinaryString(number);
         }
-        return null;
     }
 
     /*
