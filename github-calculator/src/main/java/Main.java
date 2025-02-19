@@ -17,24 +17,24 @@ public class Main {
                 System.out.println("Exiting...");
                 break;
             }
-            switch (args[1]) {
+            switch (tokens[0]) {
                 case "add":
-                    test.add(Integer.parseInt(args[2]), Integer.parseInt(args[3]));
+                    test.add(Integer.parseInt(tokens[1]), Integer.parseInt(tokens[2]));
                     break;
                 case "subtract":
-                    test.subtract(Integer.parseInt(args[2]), Integer.parseInt(args[3]));
+                    test.subtract(Integer.parseInt(tokens[1]), Integer.parseInt(tokens[2]));
                     break;
                 case "multiply":
-                    test.multiply(Integer.parseInt(args[2]), Integer.parseInt(args[3]));
+                    test.multiply(Integer.parseInt(tokens[1]), Integer.parseInt(tokens[2]));
                     break;
                 case "divide":
-                    test.divide(Integer.parseInt(args[2]), Integer.parseInt(args[3]));
+                    test.divide(Integer.parseInt(tokens[1]), Integer.parseInt(tokens[2]));
                     break;
                 case "binary":
-                    test.intToBinaryNumber(Integer.parseInt(args[2]));
+                    test.intToBinaryNumber(Integer.parseInt(tokens[1]));
                     break;
                 case "fibonacci":
-                    test.fibonacciNumberFinder(Integer.parseInt(args[2]));
+                    test.fibonacciNumberFinder(Integer.parseInt(tokens[1]));
                     break;
                 default:
                     System.out.println("Wrong command: Please type either 'add' 'subtract' 'multiply' 'divide' fibonacci' or 'binary'");
